@@ -1,0 +1,39 @@
+<IfModule mod_rewrite.c>
+    
+  #Bloquear listagem
+  Options -Indexes
+
+  RewriteEngine on
+
+  DefaultLanguage pt-BR
+  AddDefaultCharset UTF-8
+
+  RewriteCond %{SCRIPT_FILENAME} !-d
+  RewriteCond %{SCRIPT_FILENAME} !-f
+
+  #PAGES**************************************************************
+
+
+
+  # =============================== LOGIN ===============================
+     RewriteRule ^acesso?$ index.php [L,QSA]
+  # =============================== LOGIN ===============================
+
+  # =============================== HOME ===============================
+     RewriteRule ^home?$ views/home/home.php [L,QSA]
+  # =============================== HOME ===============================
+
+  # =============================== MARCAS ===============================
+      RewriteRule ^listagem-marcas?$ views/marcas/listagem-marcas.php [L,QSA]
+      RewriteRule ^nova-marca?$ views/marcas/nova-marca.php [L,QSA]
+      RewriteRule ^editar-marca/(.*)?$ views/marcas/nova-marca.php?id=$1 [L,QSA]
+      RewriteRule ^importar-marcas?$ views/marcas/importar-marcas.php [L,QSA]
+  # =============================== MARCAS ===============================
+
+    # =============================== PRODUTOS ===============================
+      RewriteRule ^listagem-produtos?$ views/produtos/listagem-produtos.php [L,QSA]
+      RewriteRule ^novo-produto?$ views/produtos/novo-produto.php [L,QSA]
+      RewriteRule ^editar-produto/(.*)?$ views/produtos/novo-produto.php?id=$1 [L,QSA]
+  # =============================== PRODUTOS ===============================
+      
+</IfModule>
