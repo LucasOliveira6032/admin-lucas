@@ -17,7 +17,7 @@
             <div class="clearfix"></div>
                 <section class="box ">
                             <header class="panel_header">
-                                <h2 class="title float-left">Marcas</h2>
+                                <h2 class="title float-left">Produtos</h2>
                             </header>
                             <div class="content-body">    
                                 <div class="row">
@@ -36,6 +36,7 @@
                                                 <tr>
                                                     <th>id</th>
                                                     <th>Nome</th>
+                                                    <th>Marca</th>
                                                     <th width="150">Ações</th>
                                                 </tr>
                                             </tfoot>

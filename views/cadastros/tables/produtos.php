@@ -12,7 +12,7 @@ $totalFiltered = $totalData;
 $requestData = $_POST;
 
 
-$query = 'WHERE ativo=1';
+$query = 'WHERE produtos.ativo=1';
 
 //CASO VENHA PESQUISA
 if (!empty($requestData['search']['value'])) {
@@ -22,7 +22,9 @@ if (!empty($requestData['search']['value'])) {
 }
 
 //FAZ A PESQUISA COM O FILTRO
-$select_x = $db->select("SELECT id_produto FROM produtos $query");
+$select_x = $db->select("SELECT id_produto FROM produtos 
+                        LEFT JOIN marcas ON produtos.id_marca_produto = marcas.id_marca
+$query");
 $totalFiltered = $db->rows($select_x);
 
 
@@ -42,7 +44,9 @@ if (isset($requestData['start'])) {
 
 
 
-$select_x = $db->select("SELECT * FROM produtos $query");
+$select_x = $db->select("SELECT produtos.*, marcas.nome_marca FROM produtos
+                        LEFT JOIN marcas ON produtos.id_marca_produto = marcas.id_marca
+ $query");
 $data = array();
 
 
@@ -51,10 +55,10 @@ while ($row = $db->expand($select_x)) {
 
     $nestedData[] = $row['id_produto'];
     $nestedData[] = $row['nome_produto'];
-    $nestedData[] = $row['id_marca_produto'];
+    $nestedData[] = $row['nome_marca'];
     $nestedData[] = '<div class="text-right">
                         <a href="editar-produto/' . $row['id_produto'] . '" data-toggle="tooltip" title="Editar produtos" class="btn btn-sm btn-warning">EDITAR</a>
-                        <a href="javascript:void(0);" data-toggle="tooltip" data-id="' . $row['id_marca_produto'] . '" data-del="controllers/cadastros/apagar-produtos.php" title="Apagar marcas" class="btn btn-sm btn-danger remove-btn">APAGAR</a>
+                        <a href="javascript:void(0);" data-toggle="tooltip" data-id="' . $row['id_produto'] . '" data-del="controllers/cadastros/apagar-produto.php" title="Apagar marcas" class="btn btn-sm btn-danger remove-btn">APAGAR</a>
                     </div>';
 
     $data[] = $nestedData;

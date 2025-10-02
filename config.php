@@ -9,6 +9,10 @@ if (session_status() == PHP_SESSION_NONE) {
 @ini_set('session.gc_probability', 1);
 @ini_set('session.gc_divisor', 100);
 @ini_set('session.cookie_secure', true);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+@ini_set('display_errors', 1);
+@ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 date_default_timezone_set('America/Sao_Paulo');
 define('ROOT_DIR', dirname(__FILE__) . '/');
