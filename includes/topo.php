@@ -14,12 +14,12 @@
         -->
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
-    <title>Ultra Admin Bootstrap 4 : Login Page</title>
+    <title>Admin Lucas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="" name="description" />
     <meta content="" name="author" />
 
-    <link rel="shortcut icon" href="<?php echo PATH ?>assets/images/favicon.png" type="image/x-icon" /> <!-- Favicon -->
+    <link rel="shortcut icon" href="<?php echo PATH ?>assets/images/gm.png" type="image/x-icon" /> <!-- Favicon -->
     <link rel="apple-touch-icon-precomposed" href="<?php echo PATH ?>assets/images/apple-touch-icon-57-precomposed.png"> <!-- For iPhone -->
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo PATH ?>assets/images/apple-touch-icon-114-precomposed.png"> <!-- For iPhone 4 Retina display -->
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo PATH ?>assets/images/apple-touch-icon-72-precomposed.png"> <!-- For iPad -->
@@ -42,6 +42,12 @@
     <link href="<?php echo PATH ?>assets/plugins/jquery-ui/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="<?php echo PATH ?>assets/plugins/jvectormap/jquery-jvectormap-2.0.1.css" rel="stylesheet" type="text/css" media="screen" />
     <link href="<?php echo PATH ?>assets/plugins/icheck/skins/minimal/white.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="<?php echo PATH ?>assets/plugins/datatables/css/datatables.min.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="<?php echo PATH ?>assets/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="<?php echo PATH ?>assets/plugins/messenger/css/messenger.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="<?php echo PATH ?>assets/plugins/messenger/css/messenger-theme-future.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="<?php echo PATH ?>assets/plugins/messenger/css/messenger-theme-flat.css" rel="stylesheet" type="text/css" media="screen"/>      
+
     <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
 

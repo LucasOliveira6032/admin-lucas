@@ -18,7 +18,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1'
     define("PATH", 'http://' . $_SERVER['HTTP_HOST'] . '/admin-lucas/');
 
     define("HOST", "localhost");
-    define("DBNAME", "lucas_crud");
+    define("DBNAME", "crud");
     define("USER", "root");
     define("PASSWORD", "");
 } else {
