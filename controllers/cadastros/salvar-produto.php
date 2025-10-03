@@ -6,6 +6,7 @@ if ($id == 0) {
         $_SESSION['tipo_aviso_lucas'] = 'error';
         $_SESSION['aviso_lucas'] = 'Já existe um produto com esse nome cadastrado.';
         header("Location: " . PATH . "novo-produto");
+        
         exit();
     } else {
         $sql_inserir_produto = $db->select("INSERT INTO produtos (nome_produto, marca_produto_, ativo) 

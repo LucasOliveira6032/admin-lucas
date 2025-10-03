@@ -37,7 +37,7 @@ if (isset($id)) {
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="inputEmail4">Nome do produto:</label>
-                                                    <input type="text" name="nome_marca" class="form-control" id="inputEmail4" value="<?php echo isset($id) ? $nome_produto : ''; ?>" placeholder="EX: Refrigerante...">
+                                                    <input type="text" name="nome_produto" class="form-control" id="inputEmail4" value="<?php echo isset($id) ? $nome_produto : ''; ?>" placeholder="EX: Refrigerante...">
                                                 </div>
                                             </div>
                                             <div class="form-row">
