@@ -12,7 +12,7 @@
         <section class="wrapper main-wrapper" style=''>
 
             <div class='col-xl-12 col-lg-12 col-md-12 col-12'>
-                <a class="btn btn-primary" href="nova-marca">Nova Produto</a>
+                <a class="btn btn-primary" href="novo-produto">Novo Produto</a>
             </div>
             <div class="clearfix"></div>
                 <section class="box ">
