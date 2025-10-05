@@ -26,7 +26,7 @@ if (isset($id)) {
             <div class="clearfix"></div>
                 <section class="box ">
                       <header class="panel_header">
-                                <h2 class="title float-left">Adicione uma nova marca</h2>
+                                <h2 class="title float-left"><?php echo isset($id) ? 'Editar marca' : 'Adicione uma marca' ?></h2>
                             </header>
                             <div class="content-body">
                                 <div class="row">

@@ -9,7 +9,7 @@ if ($id == 0) {
         
         exit();
     } else {
-        $sql_inserir_produto = $db->select("INSERT INTO produtos (nome_produto, marca_produto_, ativo) 
+        $sql_inserir_produto = $db->select("INSERT INTO produtos (nome_produto, id_marca_produto, ativo) 
                                           VALUES ('$nome_produto','$marca_produto', 1)");
         $_SESSION['tipo_aviso_lucas'] = 'success';
         $_SESSION['aviso_lucas'] = 'Produto cadastrado com sucesso.';

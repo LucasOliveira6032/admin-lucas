@@ -39,25 +39,26 @@ if (isset($id)) {
                                                     <label for="inputEmail4">Nome do produto:</label>
                                                     <input type="text" name="nome_produto" class="form-control" id="inputEmail4" value="<?php echo isset($id) ? $nome_produto : ''; ?>" placeholder="EX: Refrigerante...">
                                                 </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="input-group col-md-6">
+
+                                                <div class="form-group col-md-6">
                                                     <label for="inputEmail4">Marca do produto:</label>
-                                                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                                                    <div class="input-group-append ">
-                                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="javascript:void(0)">Action</a>
-                                                            <a class="dropdown-item" href="javascript:void(0)">Another action</a>
-                                                            <a class="dropdown-item" href="javascript:void(0)">Something else here</a>
-                                                            <div role="separator" class="dropdown-divider"></div>
-                                                            <a class="dropdown-item" href="javascript:void(0)">Separated link</a>
-                                                        </div>
-                                                    </div>
+                                                    <select class="form-control" required name="id_marca_produto" >
+                                                        <option value="0">Selecione a marca </option>
+                                                        <?php
+                                                         $marcas = $db->select( "SELECT * FROM marcas WHERE ativo = 1 ORDER BY nome_marca ASC");
+                                                         while ($marca = mysqli_fetch_array($marcas)) {
+                                                             ?>
+                                                            <option value="<?php echo $marca['id_marca']; ?>" <?php echo (isset($id) && $marca_produto == $marca['id_marca']) ? 'selected' : ''; ?>><?php echo $marca['nome_marca']; ?></option>
+                                                            <?php  
+                                                            }
+                                                        ?>
+                                                    </select>
                                                 </div>
-                                                <div class="spacer"></div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Salvar</button>
+                                            
+                                            
+                                            <div class="spacer"></div>
+                                            <button type="submit" class="btn btn-primary"><?php echo isset($id) ? 'Salvar Alterações' : 'Cadastrar'; ?></button>
                                         </form>
 
                                     </div>

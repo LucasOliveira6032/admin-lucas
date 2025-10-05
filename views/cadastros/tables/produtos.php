@@ -43,7 +43,7 @@ if (isset($requestData['start'])) {
 
 
 
-
+//puxa o nome da marca para mostrar na listagem marcas
 $select_x = $db->select("SELECT produtos.*, marcas.nome_marca FROM produtos
                         LEFT JOIN marcas ON produtos.id_marca_produto = marcas.id_marca
  $query");
