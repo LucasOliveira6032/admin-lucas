@@ -11,6 +11,7 @@ if (isset($id)) {
     //$infosMarca['atualiza'];
 
     $nome_produto = $infosProduto['nome_produto'];
+    $id_marca_produto = $infosProduto['id_marca_produto'];
     $marca_produto = $infosProduto['marca_produto'];
 }
 ?>
@@ -22,11 +23,11 @@ if (isset($id)) {
     <?php include('../../includes/menu.php'); ?>
     <!-- START CONTENT -->
     <section id="main-content" class=" ">
-        <section class="wrapper main-wrapper" style=''>
+        <section class="wrapper main-wrapper">
             <div class="clearfix"></div>
                 <section class="box ">
                       <header class="panel_header">
-                                <h2 class="title float-left">Adicione um novo produto</h2>
+                                <h2 class="title float-left"><?php echo isset($id) ? 'Editar produto' : 'Adicionar um novo produto';?></h2>
                             </header>
                             <div class="content-body">
                                 <div class="row">
@@ -48,7 +49,7 @@ if (isset($id)) {
                                                          $marcas = $db->select( "SELECT * FROM marcas WHERE ativo = 1 ORDER BY nome_marca ASC");
                                                          while ($marca = mysqli_fetch_array($marcas)) {
                                                              ?>
-                                                            <option value="<?php echo $marca['id_marca']; ?>" <?php echo (isset($id) && $marca_produto == $marca['id_marca']) ? 'selected' : ''; ?>><?php echo $marca['nome_marca']; ?></option>
+                                                            <option value="<?php echo $marca['id_marca']; ?>" <?php echo (isset($id) && $id_marca_produto == $marca['id_marca']) ? 'selected' : ''; ?>><?php echo $marca['nome_marca']; ?></option>
                                                             <?php  
                                                             }
                                                         ?>
