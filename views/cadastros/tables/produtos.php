@@ -12,7 +12,9 @@ $totalFiltered = $totalData;
 $requestData = $_POST;
 
 
-$query = 'WHERE produtos.ativo=1';
+$query = 'WHERE produtos.ativo=1'; //está assim pois quando é feito a solicitação, ela terá o valor "WHERE produtos.ativo=1"
+// depois na função assume o valor " AND ( " e em seguida recebe o valor " id_produto LIKE '%" . $requestData['search']['value'] . "%' )"
+// mantendo a requisição da seguinte forma   WHERE produtos.ativo=1 AND (id_produto LIKE % . $requestData['search']['value'] . "%' )
 
 //CASO VENHA PESQUISA
 if (!empty($requestData['search']['value'])) {
@@ -24,7 +26,8 @@ if (!empty($requestData['search']['value'])) {
 //FAZ A PESQUISA COM O FILTRO
 $select_x = $db->select("SELECT id_produto FROM produtos 
                         LEFT JOIN marcas ON produtos.id_marca_produto = marcas.id_marca
-$query");
+                        $query");
+                        //LEFT JOIN  vem sempre com a especificação ON e server para puxar um dado expecifico de uma tabela para outra
 $totalFiltered = $db->rows($select_x);
 
 

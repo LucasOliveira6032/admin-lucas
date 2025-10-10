@@ -47,7 +47,7 @@ if (isset($id)) {
                                                         <option value="0">Selecione a marca </option>
                                                         <?php
                                                          $marcas = $db->select( "SELECT * FROM marcas WHERE ativo = 1 ORDER BY nome_marca ASC");
-                                                         while ($marca = mysqli_fetch_array($marcas)) {
+                                                         while ($marca = $db->expand($marcas)) {
                                                              ?>
                                                             <option value="<?php echo $marca['id_marca']; ?>" <?php echo (isset($id) && $id_marca_produto == $marca['id_marca']) ? 'selected' : ''; ?>><?php echo $marca['nome_marca']; ?></option>
                                                             <?php  

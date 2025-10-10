@@ -24,18 +24,18 @@ $select_x = $db->select("SELECT id_marca FROM marcas $query");
 $totalFiltered = $db->rows($select_x);
 
 
-if (isset($requestData['length'])) {
+    if (isset($requestData['length'])) {
 
-    if ($requestData['length'] == '-1') {
-        $requestData['length'] = '18446744073709551615';
+        if ($requestData['length'] == '-1') {
+            $requestData['length'] = '18446744073709551615';
+        }
     }
-}
 
 
-if (isset($requestData['start'])) {
+    if (isset($requestData['start'])) {
 
-    $query .= " ORDER BY " . $order_by . "   DESC   LIMIT " . $requestData['start'] . " ," . $requestData['length'] . "   ";
-}
+        $query .= " ORDER BY " . $order_by . "   DESC   LIMIT " . $requestData['start'] . " ," . $requestData['length'] . "   ";
+    }
 
 
 

@@ -48,7 +48,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a class="" href="javascript:void(0);" >Clientes</a>
+                            <a class="" href="listagem-clientes" >Clientes</a>
                         </li>
                         <li>
                             <a class="" href="listagem-marcas" >Marcas</a>

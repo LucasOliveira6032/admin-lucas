@@ -35,5 +35,11 @@
       RewriteRule ^novo-produto?$ views/cadastros/novo-produto.php [L,QSA]
       RewriteRule ^editar-produto/(.*)?$ views/cadastros/novo-produto.php?id=$1 [L,QSA]
   # =============================== PRODUTOS ===============================
+
+      # =============================== CLIENTES ===============================
+      RewriteRule ^listagem-clientes?$ views/cadastros/listagem-cliente.php [L,QSA]
+      RewriteRule ^novo-cliente?$ views/cadastros/novo-cliente.php [L,QSA]
+      RewriteRule ^editar-cliente/(.*)?$ views/cadastros/novo-cliente.php?id=$1 [L,QSA]
+  # =============================== CLIENTES ===============================
       
 </IfModule>
