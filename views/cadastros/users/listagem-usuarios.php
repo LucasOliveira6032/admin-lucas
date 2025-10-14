@@ -1,33 +1,32 @@
-<?php include('../../includes/topo.php'); ?>
-<?php include('../../includes/barra-topo.php'); ?>
+<?php require('../../../includes/topo.php'); ?>
+<?php require('../../../includes/barra-topo.php'); ?>
 
 
-<!-- END TOPBAR -->
-<!-- START CONTAINER -->
 <div class="page-container row-fluid">
 
-    <?php include('../../includes/menu.php'); ?>
+    <?php include('../../../includes/menu.php'); ?>
     <!-- START CONTENT -->
     <section id="main-content" class=" ">
         <section class="wrapper main-wrapper" style=''>
 
             <div class='col-xl-12 col-lg-12 col-md-12 col-12'>
-                <a class="btn btn-primary" href="nova-marca">Nova Marca</a>
+                <a class="btn btn-primary" href="novo-usuario">Novo Cliente</a>
             </div>
             <div class="clearfix"></div>
                 <section class="box ">
                             <header class="panel_header">
-                                <h2 class="title float-left">Marcas</h2>
+                                <h2 class="title float-left">Clientes cadastrados</h2>
                             </header>
                             <div class="content-body">    
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-12 padding-0">
+                                    <div class="col-lg-12 col-md-12 col-12 padding-0"> 
 
-                                        <table class="table table-striped dt-responsive display datatable" cellspacing="0" width="100%" data-action="<?php echo PATH ?>views/cadastros/tables/marcas.php">
+                                        <table class="table table-striped dt-responsive display datatable" cellspacing="0" width="100%" data-action="<?php echo PATH ?>views/cadastros/tables/usuarios.php">
                                             <thead>
                                                 <tr>
                                                     <th>id</th>
                                                     <th>Nome</th>
+                                                    <th>CPF</th>                                    
                                                     <th width="150">Ações</th>
                                                 </tr>
                                             </thead>
@@ -35,6 +34,7 @@
                                                 <tr>
                                                     <th>id</th>
                                                     <th>Nome</th>
+                                                    <th>CPF</th>                                    
                                                     <th width="150">Ações</th>
                                                 </tr>
                                             </tfoot>
@@ -58,4 +58,4 @@
     </div>
 </div>
 
-<?php include('../../includes/rodape.php'); ?>
+<?php include('../../../includes/rodape.php'); ?>

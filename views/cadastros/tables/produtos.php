@@ -61,7 +61,7 @@ while ($row = $db->expand($select_x)) {
     $nestedData[] = $row['nome_marca'];
     $nestedData[] = '<div class="text-right">
                         <a href="editar-produto/' . $row['id_produto'] . '" data-toggle="tooltip" title="Editar produtos" class="btn btn-sm btn-warning">EDITAR</a>
-                        <a href="javascript:void(0);" data-toggle="tooltip" data-id="' . $row['id_produto'] . '" data-del="controllers/cadastros/apagar-produto.php" title="Apagar marcas" class="btn btn-sm btn-danger remove-btn">APAGAR</a>
+                        <a href="javascript:void(0);" data-toggle="tooltip" data-id="' . $row['id_produto'] . '" data-del="controllers/cadastros/produto/apagar-produto.php" title="Apagar marcas" class="btn btn-sm btn-danger remove-btn">APAGAR</a>
                     </div>';
 
     $data[] = $nestedData;

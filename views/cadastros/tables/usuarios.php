@@ -1,26 +1,26 @@
 <?php
 require('../../../config.php');  //<<< é necessário pois já puxa informações do banco de dados [questões de acesso etc...]
  
-$order_by = 'id_cliente';
+$order_by = 'id_usuario';
 
 
-$query = $db-> select('SELECT id_cliente FROM clientes WHERE ativo=1'); //chamada de dados ao banco
+$query = $db-> select('SELECT id_usuario FROM usuarios WHERE ativo=1'); //chamada de dados ao banco
 $totalData = $db->rows($query);
 $totalFiltered = $totalData;
 
 
 $requestData = $_POST;
 
-$query = "WHERE clientes.ativo=1";
+$query = "WHERE usuarios.ativo=1";
 
 //caso haja pesquisa
 if (!empty($requestData['search']['value'])){
     
     $query .= ' AND (';
-    $query .= " id_cliente LIKE '%" . $requestData['search']['value'] . "%' )";
+    $query .= " id_usuario LIKE '%" . $requestData['search']['value'] . "%' )";
 }
 
-$select_x = $db->select("SELECT id_cliente FROM clientes $query");
+$select_x = $db->select("SELECT id_usuario FROM usuarios $query");
 $totalFiltered = $db->rows($select_x);
 
 if (isset($requestData['length'])) {
@@ -36,19 +36,18 @@ if (isset($requestData['start'])) {
     $query .= " ORDER BY " . $order_by . "   DESC   LIMIT " . $requestData['start'] . " ," . $requestData['length'] . "   ";
 }
 
-$select_x = $db->select("SELECT * FROM clientes $query");
+$select_x = $db->select("SELECT * FROM usuarios $query");
 $data = array();
 
 while($row = $db->expand($select_x)){
     $nestedData = array();
 
-    $nestedData[] = $row['id_cliente'];
-    $nestedData[] = $row['nome_cliente'];
-    $nestedData[] = $row['razao_social_cliente'];
-    $nestedData[] = $row['cnpj_cliente'];
+    $nestedData[] = $row['id_usuario'];
+    $nestedData[] = $row['nome_usuario'];
+    $nestedData[] = $row['cpf_usuario'];
     $nestedData[] = '<div class="text-right">
-                        <a href="editar-cliente/' . $row['id_cliente'] . '" data-toggle="tooltip" title="Editar" class="btn btn-sm btn-warning">EDITAR</a>
-                        <a href="javascript:void(0);" data-toggle="tooltip" data-id="' . $row['id_cliente'] . '" data-del="controllers/cadastros/cliente/apagar-cliente.php" title="Apagar" class="btn btn-sm btn-danger remove-btn">APAGAR</a>
+                        <a href="editar-usuario/' . $row['id_usuario'] . '" data-toggle="tooltip" title="Editar" class="btn btn-sm btn-warning">EDITAR</a>
+                        <a href="javascript:void(0);" data-toggle="tooltip" data-id="' . $row['id_usuario'] . '" data-del="controllers/cadastros/usuario/apagar-usuario.php" title="Apagar" class="btn btn-sm btn-danger remove-btn">APAGAR</a>
                     </div>';
 
     $data[] = $nestedData;

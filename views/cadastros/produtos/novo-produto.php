@@ -1,5 +1,5 @@
-<?php include('../../includes/topo.php'); ?>
-<?php include('../../includes/barra-topo.php'); ?>
+<?php include('../../../includes/topo.php'); ?>
+<?php include('../../../includes/barra-topo.php'); ?>
 <?php
 if (isset($id)) {
     $infosProduto = $pesquisas->infosProdutos($id);
@@ -12,7 +12,6 @@ if (isset($id)) {
 
     $nome_produto = $infosProduto['nome_produto'];
     $id_marca_produto = $infosProduto['id_marca_produto'];
-    $marca_produto = $infosProduto['marca_produto'];
 }
 ?>
 
@@ -20,7 +19,7 @@ if (isset($id)) {
 <!-- START CONTAINER -->
 <div class="page-container row-fluid">
 
-    <?php include('../../includes/menu.php'); ?>
+    <?php include('../../../includes/menu.php'); ?>
     <!-- START CONTENT -->
     <section id="main-content" class=" ">
         <section class="wrapper main-wrapper">
@@ -33,12 +32,12 @@ if (isset($id)) {
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-12">
                                                                                                             <!-- essencial para enviar arquivos e imagens para o banco -->
-                                        <form action="controllers/cadastros/salvar-produto.php" method="post" enctype="multipart/form-data">
-                                            <input type="hidden" name="id" value="<?php echo isset($id) ? $id : '0'; ?>">
+                                        <form action="controllers/cadastros/produto/salvar-produto.php" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="id" value="<?php echo isset($id) ? $id : '0'; ?>"> <!-- por isso o backend recebe o $id -->
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="inputEmail4">Nome do produto:</label>
-                                                    <input type="text" name="nome_produto" class="form-control" id="inputEmail4" value="<?php echo isset($id) ? $nome_produto : ''; ?>" placeholder="EX: Refrigerante...">
+                                                    <input type="text" name="nome_produto" class="form-control" value="<?php echo isset($id) ? $nome_produto : ''; ?>" placeholder="EX: Refrigerante...">
                                                 </div>
 
                                                 <div class="form-group col-md-6">
@@ -78,4 +77,4 @@ if (isset($id)) {
     </div>
 </div>
 
-<?php include('../../includes/rodape.php'); ?>
+<?php include('../../../includes/rodape.php'); ?>

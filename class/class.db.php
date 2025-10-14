@@ -17,7 +17,7 @@ class DB{
 	}
 
 	public function select($query){
-		error_reporting(0);
+
 		if(!$result = $this->link->query($query)){
 			echo("<b>Erro MYSQL</b>:<br>" . mysqli_error($this->link)).'<br><br>'.$query;
 		} else {

@@ -1,5 +1,4 @@
-<?php require("../../config.php");
-echo $id;;
+<?php require("../../../config.php");
 $sql_apagar_produto = $db->select("UPDATE produtos SET ativo=0 WHERE id_produto='$id'");
 if ($sql_apagar_produto) {
     echo 'teste';

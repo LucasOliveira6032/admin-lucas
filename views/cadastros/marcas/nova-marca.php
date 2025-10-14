@@ -1,5 +1,5 @@
-<?php include('../../includes/topo.php'); ?>
-<?php include('../../includes/barra-topo.php'); ?>
+<?php include('../../../includes/topo.php'); ?>
+<?php include('../../../includes/barra-topo.php'); ?>
 <?php
 if (isset($id)) {
     $infosMarca = $pesquisas->infosMarcas($id);
@@ -19,20 +19,19 @@ if (isset($id)) {
 <!-- START CONTAINER -->
 <div class="page-container row-fluid">
 
-    <?php include('../../includes/menu.php'); ?>
+    <?php include('../../../includes/menu.php'); ?>
     <!-- START CONTENT -->
     <section id="main-content" class=" ">
-        <section class="wrapper main-wrapper" style=''>
+        <section class="wrapper main-wrapper">
             <div class="clearfix"></div>
-                <section class="box ">
-                      <header class="panel_header">
+                <section class="box ">                      <header class="panel_header">
                                 <h2 class="title float-left"><?php echo isset($id) ? 'Editar marca' : 'Adicione uma marca' ?></h2>
                             </header>
                             <div class="content-body">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-12">
                                                                                                             <!-- essencial para enviar arquivos e imagens para o banco -->
-                                        <form action="controllers/cadastros/salvar-marca.php" method="post" enctype="multipart/form-data">
+                                        <form action="controllers/cadastros/marca/salvar-marca.php" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="id" value="<?php echo isset($id) ? $id : '0'; ?>">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
@@ -65,4 +64,4 @@ if (isset($id)) {
     </div>
 </div>
 
-<?php include('../../includes/rodape.php'); ?>
+<?php include('../../../includes/rodape.php'); ?>

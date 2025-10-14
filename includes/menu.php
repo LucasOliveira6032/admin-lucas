@@ -66,7 +66,7 @@
                     </a>
                 </li>
                 <li class="">
-                    <a href="javascript:void(0);">
+                    <a href="listagem-usuarios">
                         <i class="fa fa-users"></i>
                         <span class="title">Usuários</span>
                     </a>

@@ -1,4 +1,4 @@
-<?php require("../../config.php");
+<?php require("../../../config.php");
 
 if ($id == 0) {
     $sql_conferir_marca_existe = $db->select("SELECT id_marca FROM marcas WHERE nome_marca = '$nome_marca' AND ativo=1");

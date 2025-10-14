@@ -1,4 +1,4 @@
-<?php require("../../config.php");
+<?php require("../../../config.php");
 
 if ($id == 0) {
     $sql_conferir_produto_existe = $db->select("SELECT id_produto FROM produtos WHERE nome_produto = '$nome_produto' AND ativo=1");

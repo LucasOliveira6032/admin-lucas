@@ -2,6 +2,21 @@
 
 class PESQUISAS
 {
+    public function infosUsuarios($id_usuario)
+    {
+        $db = new DB;
+        $sql = $db->select("SELECT * FROM usuarios WHERE id_usuario = '$id_usuario' LIMIT 1");
+        $line = $db->expand($sql);
+        return $line;
+    }
+
+    public function infosClientes($id_cliente)
+    {
+        $db = new DB;
+        $sql = $db->select("SELECT * FROM clientes WHERE id_cliente = '$id_cliente' LIMIT 1");
+        $line = $db->expand($sql);
+        return $line;
+    }
 
     public function infosMarcas($id_marca)
     {

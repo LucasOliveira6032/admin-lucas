@@ -1,8 +1,8 @@
-<?php include('../../includes/topo.php'); ?>
-<?php include('../../includes/barra-topo.php'); ?>
+<?php include('../../../includes/topo.php'); ?>
+<?php include('../../../includes/barra-topo.php'); ?>
 <?php
 if (isset($id)) {
-    $infosMarca = $pesquisas->infosMarcas($id);
+    $infosCliente = $pesquisas->infosClientes($id);
 
     //$infosMarca['nome_marca'];
     //$infosMarca['descricao_marca'];
@@ -10,8 +10,9 @@ if (isset($id)) {
     //$infosMarca['ativo'];
     //$infosMarca['atualiza'];
 
-    $nome_marca = $infosMarca['nome_marca'];
-    $descricao_marca = $infosMarca['descricao_marca'];
+    $nome_cliente = $infosCliente['nome_cliente'];
+    $razao_social_cliente = $infosCliente['razao_social_cliente'];
+    $cnpj_cliente = $infosCliente['cnpj_cliente'];
 }
 ?>
 
@@ -19,7 +20,7 @@ if (isset($id)) {
 <!-- START CONTAINER -->
 <div class="page-container row-fluid">
 
-    <?php include('../../includes/menu.php'); ?>
+    <?php include('../../../includes/menu.php'); ?>
     <!-- START CONTENT -->
     <section id="main-content" class=" ">
         <section class="wrapper main-wrapper" style=''>
@@ -32,20 +33,20 @@ if (isset($id)) {
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-12">
                                                                                                             <!-- essencial para enviar arquivos e imagens para o banco -->
-                                        <form action="controllers/cadastros/salvar-cliente.php" method="post" enctype="multipart/form-data">
+                                        <form action="controllers/cadastros/cliente/salvar-cliente.php" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="id" value="<?php echo isset($id) ? $id : '0'; ?>">
                                             <div class="form-column">
                                                 <div class="form-group col-md-8">
                                                     <label for="inputEmail4">Nome do cliente:</label>
-                                                    <input type="text" name="nome_marca" class="form-control" id="inputEmail4" value="<?php echo isset($id) ? $nome_marca : ''; ?>" placeholder="ex: Duratex...">
+                                                    <input type="text" name="nome_cliente" class="form-control" id="inputEmail4" value="<?php echo isset($id) ? $nome_cliente : ''; ?>" placeholder="ex: Duratex...">
                                                 </div>
                                                 <div class="form-group col-md-8">
                                                     <label for="inputEmail4">Razão Social do cliente:</label>
-                                                    <input type="text" name="nome_marca" class="form-control" id="inputEmail4" value="<?php echo isset($id) ? $nome_marca : ''; ?>" placeholder="ex: Industria de marcenaria LTDA...">
+                                                    <input type="text" name="razao_social_cliente" class="form-control" id="inputEmail4" value="<?php echo isset($id) ? $razao_social_cliente : ''; ?>" placeholder="ex: Industria de marcenaria LTDA...">
                                                 </div>
                                                 <div class="form-group col-md-8">
                                                     <label for="inputEmail4">CNPJ do cliente:</label>
-                                                    <input type="text" name="nome_marca" class="form-control" id="inputEmail4" value="<?php echo isset($id) ? $nome_marca : ''; ?>" placeholder="ex: 12.345.678/0000-12...">
+                                                    <input type="text" name="cnpj_cliente" class="form-control cnpj" id="inputEmail4" value="<?php echo isset($id) ? $cnpj_cliente : ''; ?>" placeholder="ex: 12.345.678/0000-12...">
                                                 </div>
                                             </div>
                                             <div class="form-row">
@@ -72,4 +73,4 @@ if (isset($id)) {
     </div>
 </div>
 
-<?php include('../../includes/rodape.php'); ?>
+<?php include('../../../includes/rodape.php'); ?>

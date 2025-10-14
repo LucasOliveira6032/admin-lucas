@@ -1,12 +1,12 @@
-<?php include('../../includes/topo.php'); ?>
-<?php include('../../includes/barra-topo.php'); ?>
+<?php include('../../../includes/topo.php'); ?>
+<?php include('../../../includes/barra-topo.php'); ?>
 
 
 <!-- END TOPBAR -->
 <!-- START CONTAINER -->
 <div class="page-container row-fluid">
 
-    <?php include('../../includes/menu.php'); ?>
+    <?php include('../../../includes/menu.php'); ?>
     <!-- START CONTENT -->
     <section id="main-content" class=" ">
         <section class="wrapper main-wrapper" style=''>
@@ -62,4 +62,4 @@
     </div>
 </div>
 
-<?php include('../../includes/rodape.php'); ?>
+<?php include('../../../includes/rodape.php'); ?>

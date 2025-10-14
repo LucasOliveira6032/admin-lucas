@@ -67,6 +67,9 @@ data-tipo="<?php if (isset($_SESSION['tipo_aviso_lucas']) && $_SESSION['tipo_avi
 <script src="<?php echo PATH ?>assets/js/chart-sparkline.js" type="text/javascript"></script>
 <script src="<?php echo PATH ?>assets/js/iniciar-datatables.js" type="text/javascript"></script>
 <script src="<?php echo PATH ?>assets/js/lucascustom.js" type="text/javascript"></script>
+<script src="<?php echo PATH ?>assets/js/mask.js"></script>
+<script src="<?php echo PATH ?>assets/js/jquery.maskMoney.js"></script>
+<script src="<?php echo PATH ?>assets/js/mascara.js"></script>
 <!-- Sidebar Graph - END -->
 
 

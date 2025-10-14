@@ -51,7 +51,7 @@ while ($row = $db->expand($select_x)) {
     $nestedData[] = $row['nome_marca'];
     $nestedData[] = '<div class="text-right">
                         <a href="editar-marca/' . $row['id_marca'] . '" data-toggle="tooltip" title="Editar marcas" class="btn btn-sm btn-warning">EDITAR</a>
-                        <a href="javascript:void(0);" data-toggle="tooltip" data-id="' . $row['id_marca'] . '" data-del="controllers/cadastros/apagar-marca.php" title="Apagar marcas" class="btn btn-sm btn-danger remove-btn">APAGAR</a>
+                        <a href="javascript:void(0);" data-toggle="tooltip" data-id="' . $row['id_marca'] . '" data-del="controllers/cadastros/marca/apagar-marca.php" title="Apagar marcas" class="btn btn-sm btn-danger remove-btn">APAGAR</a>
                     </div>';
 
     $data[] = $nestedData;
@@ -65,3 +65,5 @@ $json_data = array(
 );
 
 echo json_encode($json_data);
+
+?>

@@ -1,4 +1,4 @@
-<?php require("../../config.php");
+<?php require("../../../config.php");
 
 $sql_apagar_marca = $db->select("UPDATE marcas SET ativo=0 WHERE id_marca='$id'");
 if ($sql_apagar_marca) {
